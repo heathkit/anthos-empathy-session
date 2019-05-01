@@ -8,5 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
     -o foo 
 
 FROM scratch
-COPY --from=/module/foo .
+COPY --from=0 /module/foo .
 ENTRYPOINT ["/foo"]
